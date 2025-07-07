@@ -1,144 +1,110 @@
-# 🚀 Kumar Vaishnav - Portfolio Website
+# Kumar Vaishnav - Backend Developer Portfolio
 
-A modern, responsive portfolio website showcasing my work as a Software Engineer, built with pure HTML, CSS, and JavaScript.
+A minimalist, terminal-inspired portfolio showcasing backend engineering expertise with a clean light/dark theme toggle.
 
-## ✨ Features
+## 🚀 Features
 
+- **Terminal Aesthetic**: Clean, developer-focused design with monospace fonts and terminal-style elements
+- **Light/Dark Theme**: Toggle between light and dark modes with persistent preference storage
 - **Responsive Design**: Works perfectly on desktop, tablet, and mobile devices
-- **Modern UI/UX**: Clean, professional design with smooth animations
-- **Performance Optimized**: Fast loading with optimized assets
-- **Interactive Elements**: Smooth scrolling, hover effects, and animations
-- **GitHub Pages Ready**: Optimized for easy hosting on GitHub Pages
+- **Interactive Elements**: Smooth animations and hover effects
+- **Professional Content**: Detailed work experience, skills, and project metrics
 
-## 🎯 Sections
+## 🛠️ Tech Stack
 
-- **Hero Section**: Introduction with call-to-action buttons
-- **About**: Personal introduction and key statistics
-- **Experience**: Detailed work experience with project highlights
-- **Skills**: Technical skills and core competencies
-- **Education**: Academic background
-- **Contact**: Contact information and social links
+- **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
+- **Fonts**: JetBrains Mono for that authentic coding feel
+- **Icons**: Emoji-based for universal compatibility
+- **Deployment**: GitHub Pages ready
 
-## 🚀 How to Host on GitHub Pages
+## 📋 Deployment Instructions
 
-### Step 1: Create a GitHub Repository
-1. Go to [GitHub](https://github.com) and create a new repository
-2. Name it `your-username.github.io` (replace with your actual GitHub username)
-3. Make sure it's set to **Public**
-4. Initialize with a README (optional)
+### Step 1: Create GitHub Repository
 
-### Step 2: Upload Your Files
-1. Clone the repository to your local machine:
-   ```bash
-   git clone https://github.com/your-username/your-username.github.io.git
-   ```
-2. Copy all the website files (`index.html`, `styles.css`, `script.js`) into the repository folder
-3. Commit and push the changes:
-   ```bash
-   git add .
-   git commit -m "Add portfolio website"
-   git push origin main
-   ```
+1. Go to [GitHub.com](https://github.com) and sign in
+2. Click "New repository" (green button)
+3. Name it: `kumarvaishnav.github.io` (or any name you prefer)
+4. Make sure it's **Public** (required for GitHub Pages)
+5. **DO NOT** initialize with README, .gitignore, or license
+6. Click "Create repository"
+
+### Step 2: Push Your Code
+
+Run these commands in your terminal:
+
+```bash
+# Add the GitHub repository as remote origin
+git remote add origin https://github.com/YOUR_USERNAME/kumarvaishnav.github.io.git
+
+# Push your code to GitHub
+git push -u origin main
+```
+
+Replace `YOUR_USERNAME` with your actual GitHub username.
 
 ### Step 3: Enable GitHub Pages
+
 1. Go to your repository on GitHub
-2. Click on **Settings** tab
-3. Scroll down to **Pages** section in the left sidebar
-4. Under **Source**, select **Deploy from a branch**
-5. Choose **main** branch and **/ (root)** folder
-6. Click **Save**
+2. Click on **"Settings"** tab
+3. Scroll down to **"Pages"** section
+4. Under "Source", select **"Deploy from a branch"**
+5. Choose **"main"** branch and **"/ (root)"** folder
+6. Click **"Save"**
 
-### Step 4: Access Your Website
-- Your website will be available at: `https://your-username.github.io`
-- It may take a few minutes to deploy initially
+### Step 4: Access Your Live Site
 
-## 📁 File Structure
+Your portfolio will be available at:
+- `https://YOUR_USERNAME.github.io/kumarvaishnav.github.io/` (if repo name is kumarvaishnav.github.io)
+- Or `https://YOUR_USERNAME.github.io/REPO_NAME/` (if different repo name)
 
-```
-├── index.html          # Main HTML file
-├── styles.css          # Stylesheet with all styling
-├── script.js           # JavaScript for interactivity
-├── projects.md         # Original project data (reference)
-└── README.md           # This file
+## 🔗 Using on Resume/LinkedIn
+
+Once deployed, you can add your portfolio URL to:
+
+- **Resume**: Add under contact information or as a separate "Portfolio" section
+- **LinkedIn**: 
+  - Add to "Featured" section
+  - Include in "About" section
+  - Add to "Contact Info" under "Websites"
+
+## 📱 Local Development
+
+To run locally:
+
+```bash
+# Simple local server
+python -m http.server 8000
+# or
+npx serve .
+
+# Then open http://localhost:8000
 ```
 
 ## 🎨 Customization
 
-### Update Personal Information
-1. **Contact Links**: Update email, LinkedIn, and GitHub links in `index.html`
-2. **Content**: Modify text content to match your experience
-3. **Colors**: Change the color scheme in `styles.css` by updating CSS variables
-4. **Projects**: Add or modify project cards in the experience section
+- **Colors**: Edit CSS custom properties in `styles.css` 
+- **Content**: Update `index.html` with your information
+- **Animations**: Modify JavaScript in `script.js`
+- **Theme**: Default is light mode, toggle available in top-right
 
-### Add Your Own Projects
-To add more projects, duplicate a project card in the `index.html` file:
+## 📄 File Structure
 
-```html
-<div class="project-card">
-    <div class="project-header">
-        <i class="fas fa-your-icon project-icon"></i>
-        <h4>Your Project Title</h4>
-    </div>
-    <p class="project-description">
-        Your project description...
-    </p>
-    <div class="project-impact">
-        <span class="impact-tag">Impact 1</span>
-        <span class="impact-tag">Impact 2</span>
-    </div>
-</div>
+```
+├── index.html          # Main HTML file
+├── styles.css          # All styling and themes
+├── script.js           # Theme toggle and interactions
+├── projects.md         # Project details reference
+└── README.md          # This file
 ```
 
-## 🛠️ Technologies Used
+## 🚀 Performance Features
 
-- **HTML5**: Semantic markup
-- **CSS3**: Modern styling with Flexbox and Grid
-- **JavaScript**: Interactive features and animations
-- **Font Awesome**: Icons
-- **Google Fonts**: Inter font family
-
-## 📱 Browser Support
-
-- Chrome (latest)
-- Firefox (latest)  
-- Safari (latest)
-- Edge (latest)
-
-## 🔧 Local Development
-
-To run locally:
-1. Download all files
-2. Open `index.html` in your browser
-3. Or use a local server:
-   ```bash
-   # Using Python
-   python -m http.server 8000
-   
-   # Using Node.js
-   npx http-server
-   ```
-
-## 📈 Performance
-
-- **Lighthouse Score**: 95+ (Performance, Accessibility, Best Practices, SEO)
-- **Mobile Friendly**: Fully responsive design
-- **Fast Loading**: Optimized images and minimal dependencies
-
-## 🎯 SEO Optimized
-
-- Meta tags for social sharing
-- Semantic HTML structure
-- Optimized images with alt text
-- Clean URL structure
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🤝 Contributing
-
-Feel free to fork this project and customize it for your own portfolio!
+- **Lightweight**: No external dependencies
+- **Fast Loading**: Optimized CSS and minimal JavaScript
+- **SEO Friendly**: Semantic HTML structure
+- **Responsive**: Mobile-first design approach
 
 ---
 
-**Built with ❤️ by Kumar Vaishnav** 
+**Live Portfolio**: Will be available at your GitHub Pages URL after deployment
+**Contact**: [kumarvaishnav97@gmail.com](mailto:kumarvaishnav97@gmail.com) 
