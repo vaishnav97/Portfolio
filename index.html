@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumar Vaishnav</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="nav-links">
+            <a href="#about">about</a>
+            <a href="#journey">journey</a>
+            <a href="#built">skills</a>
+            <a href="#contact">contact</a>
+        </div>
+        <button id="theme-toggle" class="theme-toggle">
+            <span class="toggle-icon">☀️</span>
+        </button>
+    </nav>
+
+    <main>
+        <div class="intro">
+            <h1>kumar vaishnav</h1>
+            <p>backend engineer by craft, systems thinker by nature, scale chaser by choice<span class="cursor">_</span></p>
+            <p class="casual">tldr, been there done that: <a href="https://drive.google.com/file/d/1GEUS0XpczC-OBO6thTg1wq4bIrDbyQFK/view?usp=drive_link" target="_blank">resume please</a></p>
+        </div>
+
+        <section id="about">
+            <h2>📍 Now</h2>
+            <ul>
+                <li>Building scalable backend systems at VMart (post-Limeroad acquisition) that serve 5M+ users daily.</li>
+                <li>Obsessing over search engines, similarity algorithms, and the eternal quest for sub-150ms response times.</li>
+                <li>Iterating on systems – currently on V3 of most platforms, learning that the best solutions often come from breaking things twice.</li>
+                <li>Writing about distributed systems, the art of handling millions of queries, and why premature optimization really is the root of all evil.</li>
+            </ul>
+        </section>
+
+        <section id="journey">
+            <h2>🛒 From Limeroad to VMart</h2>
+            <p><em>navigating acquisitions while keeping systems alive</em></p>
+            
+            <p>Joined Limeroad in April 2021. Fashion e-commerce, millions of products, "move fast and break things" as daily reality.</p>
+            
+            <h3>🔍 Product Similarity Engine</h3>
+            <ul>
+                <li><strong>V2 & V3:</strong> Developed a near real-time product similarity engine using KNN and Solr</li>
+                <li>Built nightly Kafka-based vector embedding retraining service across all PDPs</li>
+                <li>Serving <strong>5M+ PDPs</strong> with <strong>P95 latency <150ms</strong>, handling <strong>5K+ RPM</strong>, <strong>~99.5% observed availability</strong></li>
+                <li><strong>Result:</strong> Improved cross-sell conversion by <strong>~10.3%</strong>, significant revenue growth</li>
+            </ul>
+            
+            <h3>📊 Vendor Analytics & Pricing Intelligence</h3>
+            <ul>
+                <li>Built vendor dashboard covering GMV, revenue, and SKU-level trends for <strong>25M+ SKUs</strong></li>
+                <li>Powered by price intelligence engine scraping competitor platforms at scale</li>
+                <li>Implemented rule-based price recommendation triggers (peer price gaps, margin thresholds, stock shifts)</li>
+                <li><strong>Result:</strong> <strong>8-12%</strong> gross margin improvement, <strong>42%</strong> reduction in vendor escalations, <strong>20K+ monthly active users</strong></li>
+            </ul>
+            
+            <h3>🔍 Search Platform Revamp</h3>
+            <ul>
+                <li><strong>V2 & V3:</strong> Re-architected Solr-based product search engine for <strong>1M+ daily queries</strong></li>
+                <li>Added NER, typo correction, synonym expansion, and vector-based reranking via KNN</li>
+                <li>Achieved <strong>P95 indexing latency <500ms</strong> through near real-time ingestion pipelines</li>
+                <li>Added intent scoring + query classification, enabling controlled A/B experiments</li>
+                <li><strong>Result:</strong> <strong>15.6%</strong> bounce rate reduction, <strong>9%</strong> CTR boost, <strong>20%</strong> long-tail discovery improvement</li>
+            </ul>
+            
+            <h3>🔤 Autocomplete Platform Revamp</h3>
+            <ul>
+                <li><strong>V2 & V3:</strong> Redesigned using behavioral insights to define <strong>top 8 search intents</strong></li>
+                <li>Built Solr prefix suggester with edge-ngrams, handling <strong>1.2M+ queries/day</strong></li>
+                <li>Integrated global LTR ranking with click data, tested ranking variations via A/B platform</li>
+                <li><strong>Result:</strong> <strong>P95 latency <50ms</strong>, <strong>12%</strong> CTR increase, <strong>4%</strong> search-to-cart conversion boost</li>
+            </ul>
+            
+            <p><strong>Late 2022:</strong> VMart acquired Limeroad. Same team, bigger resources, different priorities. Our scrappy solutions suddenly needed to scale even further.</p>
+            
+            <h3>📦 Catalog Updation Platform</h3>
+            <ul>
+                <li>Built self-serve Rails + Redis platform for near real-time URL updates across <strong>200+ categories</strong></li>
+                <li>Enabled fast campaign/SEO changes while maintaining consistency across systems</li>
+                <li>Added rollback, access control, and audit logging capabilities</li>
+                <li><strong>Result:</strong> Deployment time from <strong>2-3 days</strong> to <strong><15 minutes</strong>, <strong>500K+ URL updates/year</strong></li>
+            </ul>
+            
+            <h3>🏠 Homepage Toggle Management System</h3>
+            <ul>
+                <li>Built dynamic toggle service for homepage/feed sections (static, campaign, activity-based)</li>
+                <li>Added near real-time rollout, rollback, targeting, and analytics for <strong>5K+ daily sessions</strong></li>
+                <li>Empowered non-tech teams to ship independently, validating changes via A/B platform</li>
+                <li><strong>Result:</strong> <strong>12%</strong> homepage CTR improvement, <strong>18%</strong> navigation depth increase</li>
+            </ul>
+            
+            <h3>🧩 Widgets Content Management System</h3>
+            <ul>
+                <li>Delivered CMS for managing homepage creatives (banners, videos, offers)</li>
+                <li>Added live updates, previews, and rollback capabilities</li>
+                <li>Enabled content experiments via centralized A/B configuration</li>
+                <li><strong>Result:</strong> Content turnaround from <strong>48 hours</strong> to <strong><2 hours</strong>, <strong>10K+ weekly updates</strong></li>
+            </ul>
+            
+            <h3>🧪 A/B Experimentation Platform</h3>
+            <ul>
+                <li>Designed centralized service for A/B experiments and feature flags</li>
+                <li>Exposed APIs for experiment creation, user bucketing, and variant resolution</li>
+                <li>Enabled controlled rollouts and consistent user targeting across all services</li>
+                <li><strong>Result:</strong> <strong>20+ experiments/month</strong>, <strong>80%+ user session coverage</strong>, culture shift from "ship and pray" to "test and learn"</li>
+            </ul>
+
+            <h2>🎓 Learning to Code in Delhi</h2>
+            <p><em>where coffee shops became classrooms</em></p>
+            
+            <p>NSUT (formerly NSIT) 2016-2020. Computer Engineering because it sounded important.</p>
+            
+            <ul>
+                <li>Spent more time in library than lectures – not because I was studious, but because the internet was better</li>
+                <li>First real project was a mess of spaghetti code and sleepless nights, but it worked. Sort of.</li>
+                <li>Campus placements were intense – while everyone memorized algorithms, I focused on understanding how systems actually work</li>
+                <li>Key learning: working software beats perfect software every single time</li>
+            </ul>
+
+            <h2>💻 First Steps into Tech</h2>
+            <p><em>when 'hello world' felt like magic</em></p>
+            
+            <ul>
+                <li>First program was Python with print statements everywhere because I didn't know debuggers existed</li>
+                <li>Early projects were over-engineered disasters – solving simple problems with complex solutions</li>
+                <li>Gradually learned that the best code is often the code you don't have to write</li>
+                <li>Fell in love with backend systems during an internship – databases, message queues, APIs fascinated me</li>
+                <li>While everyone wanted to build pretty UIs, I was drawn to the invisible magic that makes everything possible</li>
+            </ul>
+        </section>
+
+        <section id="built">
+            <h2>🛠️ Technical Skills</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming & Technologies</h3>
+                    <p>Java, Spring, Spring Hibernate, Spring JPA, Ruby on Rails, Ruby, RSpec, Python, Apache Solr, MySQL, MongoDB, Apache Kafka, Redis, Aerospike, AWS, Amazon S3, Docker, Git, GitHub Actions, Postman, Jira</p>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Core Competencies</h3>
+                    <p>Backend Development, System Design, Search Engines, Message Queues, API Development, Database Management, Performance Optimization, A/B Testing, Concurrency, MultiThreading</p>
+                </div>
+            </div>
+            
+            <div class="quick-stats">
+                <div class="stats-header">
+                    <div class="stats-code">const stats = {</div>
+                    <h3>By the Numbers</h3>
+                </div>
+                <ul>
+                    <li><strong>5M+</strong> PDPs served daily with sub-150ms latency</li>
+                    <li><strong>1M+</strong> search queries processed daily</li>
+                    <li><strong>25M+</strong> SKUs managed through pricing intelligence</li>
+                    <li><strong>20+</strong> A/B experiments running monthly</li>
+                    <li><strong>99.5%</strong> system availability maintained</li>
+                </ul>
+                <div class="stats-footer">};</div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Let's Connect</h2>
+            <p>Love discussing system design, performance optimization, or simply connecting with fellow engineers building things at scale.</p>
+            
+            <div class="links">
+                <a href="mailto:kumarvaishnav97@gmail.com" target="_blank">email</a>
+                <a href="https://www.linkedin.com/in/kumarvaishnav/" target="_blank">linkedin</a>
+                <a href="https://github.com/vaishnav97" target="_blank">github</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html> 

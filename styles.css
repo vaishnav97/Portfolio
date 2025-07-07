@@ -1,0 +1,624 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Dark theme colors */
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #c9d1d9;
+    --text-secondary: #8b949e;
+    --accent-green: #39d353;
+    --accent-blue: #58a6ff;
+    --accent-yellow: #f2cc60;
+    --accent-red: #f85149;
+    --border-color: #30363d;
+    --hover-bg: #262c36;
+}
+
+/* Light theme colors */
+[data-theme="light"] {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f6f8fa;
+    --bg-tertiary: #f1f3f4;
+    --text-primary: #24292f;
+    --text-secondary: #656d76;
+    --accent-green: #1f883d;
+    --accent-blue: #0969da;
+    --accent-yellow: #bf8700;
+    --accent-red: #cf222e;
+    --border-color: #d1d9e0;
+    --hover-bg: #f3f4f6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'JetBrains Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: var(--bg-primary);
+    font-size: 14px;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Terminal-like scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-green);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-blue);
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 2rem;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.nav-links::before {
+    content: "$ ";
+    color: var(--accent-green);
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-right: 2rem;
+    font-size: 13px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+nav a:hover {
+    color: var(--accent-green);
+}
+
+nav a::before {
+    content: "--";
+    margin-right: 0.5rem;
+    color: var(--accent-blue);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    position: relative;
+    margin-left: 1rem;
+    flex-shrink: 0;
+}
+
+.theme-toggle::before {
+    content: "theme";
+    color: var(--accent-blue);
+    font-size: 10px;
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-secondary);
+    padding: 0 0.3rem;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.theme-toggle:hover {
+    background: var(--hover-bg);
+    border-color: var(--accent-green);
+    transform: translateY(-1px);
+}
+
+.toggle-icon {
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover .toggle-icon {
+    transform: rotate(180deg);
+}
+
+
+
+/* Main content */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 5rem 2rem 2rem;
+}
+
+/* Intro section */
+.intro {
+    margin-bottom: 4rem;
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    position: relative;
+}
+
+.intro::before {
+    content: "#!/bin/bash";
+    position: absolute;
+    top: -12px;
+    left: 1rem;
+    background: var(--bg-primary);
+    color: var(--accent-yellow);
+    padding: 0 0.5rem;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-green);
+    font-weight: 700;
+}
+
+.intro h1::before {
+    content: "export USER=";
+    color: var(--accent-blue);
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.intro p {
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+.intro p.casual {
+    color: var(--text-primary);
+}
+
+.intro p.casual::before {
+    content: "// ";
+    color: var(--accent-yellow);
+}
+
+.intro a {
+    color: var(--accent-blue);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.intro a:hover {
+    color: var(--accent-green);
+}
+
+/* Sections */
+section {
+    margin-bottom: 4rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+section h2 {
+    background: var(--bg-tertiary);
+    color: var(--accent-green);
+    padding: 1rem 2rem;
+    margin: 0;
+    font-size: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+}
+
+section h2::before {
+    content: "root@system:~$ ";
+    color: var(--accent-blue);
+    font-size: 1rem;
+    margin-right: 1rem;
+}
+
+section h3 {
+    color: var(--accent-yellow);
+    font-size: 1.2rem;
+    margin: 2rem 0 1rem 0;
+    padding-left: 2rem;
+    position: relative;
+}
+
+section h3::before {
+    content: "├── ";
+    color: var(--accent-green);
+    position: absolute;
+    left: 0;
+}
+
+section p, section ul {
+    padding: 0 2rem;
+    margin-bottom: 1.5rem;
+}
+
+section p {
+    color: var(--text-secondary);
+}
+
+section p em {
+    color: var(--accent-blue);
+    font-style: normal;
+}
+
+section p em::before {
+    content: "/* ";
+    color: var(--accent-yellow);
+}
+
+section p em::after {
+    content: " */";
+    color: var(--accent-yellow);
+}
+
+section ul {
+    list-style: none;
+    padding-left: 3rem;
+}
+
+section li {
+    margin-bottom: 0.8rem;
+    position: relative;
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+section li::before {
+    content: "│   ● ";
+    color: var(--accent-green);
+    position: absolute;
+    left: -2rem;
+}
+
+section li strong {
+    color: var(--accent-blue);
+}
+
+section a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-blue);
+    transition: all 0.3s ease;
+}
+
+section a:hover {
+    color: var(--accent-green);
+    border-bottom-color: var(--accent-green);
+}
+
+/* Skills section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.skill-category {
+    background: var(--bg-tertiary);
+    padding: 1.5rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    position: relative;
+}
+
+.skill-category::before {
+    content: "function ";
+    color: var(--accent-red);
+    font-size: 12px;
+    position: absolute;
+    top: -8px;
+    left: 1rem;
+    background: var(--bg-tertiary);
+    padding: 0 0.5rem;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.skill-category h3 {
+    color: var(--accent-yellow);
+    margin: 0 0 1rem 0;
+    padding: 0;
+    font-size: 1.1rem;
+}
+
+.skill-category h3::before {
+    content: "";
+}
+
+.skill-category h3::after {
+    content: "() {";
+    color: var(--text-secondary);
+}
+
+.skill-category p {
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.skill-category p::after {
+    content: "\A}";
+    white-space: pre;
+    color: var(--text-secondary);
+}
+
+.quick-stats {
+    background: var(--bg-primary);
+    padding: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.stats-header {
+    margin-bottom: 1rem;
+}
+
+.stats-code {
+    color: var(--accent-blue);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.quick-stats h3 {
+    color: var(--accent-green);
+    margin: 0;
+    padding: 0;
+    font-size: 1.1rem;
+}
+
+.quick-stats h3::before {
+    content: none !important;
+}
+
+.quick-stats ul {
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.quick-stats li::before {
+    content: "  ";
+    color: var(--accent-green);
+}
+
+.quick-stats li strong {
+    color: var(--accent-green);
+}
+
+.stats-footer {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+/* Contact section */
+.links {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    flex-wrap: wrap;
+}
+
+.links a {
+    background: var(--bg-tertiary);
+    color: var(--accent-green);
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    font-size: 13px;
+    position: relative;
+}
+
+.links a::before {
+    content: "curl -X GET ";
+    color: var(--accent-blue);
+    font-size: 11px;
+    position: absolute;
+    top: -12px;
+    left: 0.5rem;
+    background: var(--bg-secondary);
+    padding: 0 0.5rem;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.links a:hover {
+    background: var(--hover-bg);
+    color: var(--accent-yellow);
+    border-color: var(--accent-green);
+    transform: translateY(-2px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    main {
+        padding: 4rem 1rem 2rem;
+    }
+    
+    nav {
+        padding: 1rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 50px;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .theme-toggle {
+        margin-left: 0;
+        flex-shrink: 0;
+    }
+    
+    nav a {
+        margin-right: 1rem;
+        font-size: 12px;
+    }
+    
+    .intro h1 {
+        font-size: 2rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    section h2 {
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
+    
+    section p, section ul {
+        padding: 0 1rem;
+    }
+    
+    section ul {
+        padding-left: 2rem;
+    }
+    
+    .links {
+        padding: 1rem;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+    }
+    
+    .nav-links {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .theme-toggle {
+        align-self: center;
+        margin-top: 0.5rem;
+    }
+    
+
+    
+    nav a {
+        margin-right: 0.5rem;
+        font-size: 11px;
+    }
+    
+    main {
+        padding: 5rem 1rem 2rem;
+    }
+    
+    .intro h1 {
+        font-size: 1.8rem;
+    }
+    
+    .intro h1::before {
+        font-size: 0.9rem;
+    }
+}
+
+/* Animation for terminal cursor */
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.intro h1::after {
+    content: "_";
+    color: var(--accent-green);
+    animation: blink 1s infinite;
+    margin-left: 0.2rem;
+    opacity: 1;
+}
+
+.cursor {
+    color: var(--accent-green);
+    animation: blink 1s infinite;
+    font-weight: bold;
+    margin-left: 0.1rem;
+}
+
+/* Print styles */
+@media print {
+    body {
+        max-width: none;
+        margin: 0;
+        padding: 20px;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
+    nav {
+        display: none;
+    }
+    
+    .links a {
+        border: none;
+        padding: 0;
+        margin-right: 20px;
+    }
+    
+    .project:hover {
+        transform: none;
+        background-color: transparent;
+        padding: 32px 0;
+        margin: 32px 0;
+    }
+} 
