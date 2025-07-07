@@ -19,7 +19,7 @@ A minimalist, terminal-inspired website showcasing my work and experience. Built
 
 ---
 
-**Live Portfolio**: [kumarvaishnav.github.io](https://kumarvaishnav.github.io)  
+**Live Portfolio**: [kumarvaishnav.github.io](https://vaishnav97.github.io/Portfolio/)  
 **Email**: [kumarvaishnav97@gmail.com](mailto:kumarvaishnav97@gmail.com)  
 **LinkedIn**: [linkedin.com/in/kumarvaishnav](https://linkedin.com/in/kumarvaishnav)  
 **GitHub**: [github.com/vaishnav97](https://github.com/vaishnav97) 
