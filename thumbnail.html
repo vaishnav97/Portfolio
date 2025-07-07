@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumar Vaishnav - Portfolio Thumbnail</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .thumbnail-card {
+            width: 1200px;
+            height: 630px;
+            background: linear-gradient(135deg, #161b22 0%, #21262d 100%);
+            border: 2px solid #39d353;
+            border-radius: 16px;
+            padding: 60px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .thumbnail-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(57, 211, 83, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(88, 166, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .terminal-header {
+            color: #39d353;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .terminal-header::before {
+            content: "$ ";
+            color: #39d353;
+            font-weight: bold;
+        }
+
+        .name {
+            font-size: 64px;
+            font-weight: 700;
+            color: #39d353;
+            margin-bottom: 10px;
+            line-height: 1.1;
+        }
+
+        .name::before {
+            content: "export USER=";
+            color: #58a6ff;
+            font-size: 24px;
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        .name::after {
+            content: "_";
+            animation: blink 1s infinite;
+            margin-left: 8px;
+        }
+
+        .tagline {
+            font-size: 32px;
+            color: #c9d1d9;
+            margin-bottom: 40px;
+            font-weight: 400;
+            line-height: 1.3;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .stats-section {
+            background: rgba(33, 38, 45, 0.8);
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 30px;
+            border-left: 4px solid #39d353;
+        }
+
+        .stats-title {
+            color: #f2cc60;
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .stats-title::before {
+            content: "├── ";
+            color: #39d353;
+            margin-right: 8px;
+        }
+
+        .stat-item {
+            color: #c9d1d9;
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .stat-item::before {
+            content: "●";
+            color: #39d353;
+            margin-right: 12px;
+            font-size: 12px;
+        }
+
+        .stat-number {
+            color: #39d353;
+            font-weight: 700;
+        }
+
+        .url {
+            position: absolute;
+            bottom: 30px;
+            right: 60px;
+            color: #58a6ff;
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        .url::before {
+            content: "🌐 ";
+            margin-right: 8px;
+        }
+
+        .company {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            color: #f2cc60;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .company::before {
+            content: "// ";
+            color: #8b949e;
+            margin-right: 5px;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .tech-stack {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            color: #8b949e;
+            font-size: 14px;
+        }
+
+        .tech-stack::before {
+            content: "Tech: ";
+            color: #58a6ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="thumbnail-card">
+        <div class="company">VMart (Backend Engineer)</div>
+        
+        <div class="terminal-header">portfolio.sh</div>
+        
+        <h1 class="name">kumar vaishnav</h1>
+        <p class="tagline">backend engineer building systems at scale</p>
+        
+        <div class="stats-container">
+            <div class="stats-section">
+                <h3 class="stats-title">Scale & Performance</h3>
+                <div class="stat-item"><span class="stat-number">5M+</span> users served daily</div>
+                <div class="stat-item"><span class="stat-number">1M+</span> search queries/day</div>
+                <div class="stat-item"><span class="stat-number">&lt;150ms</span> P95 latency</div>
+                <div class="stat-item"><span class="stat-number">99.5%</span> system availability</div>
+            </div>
+            
+            <div class="stats-section">
+                <h3 class="stats-title">Impact & Growth</h3>
+                <div class="stat-item"><span class="stat-number">25M+</span> SKUs managed</div>
+                <div class="stat-item"><span class="stat-number">20+</span> A/B experiments/month</div>
+                <div class="stat-item"><span class="stat-number">10.3%</span> conversion improvement</div>
+                <div class="stat-item"><span class="stat-number">42%</span> reduced escalations</div>
+            </div>
+        </div>
+        
+        <div class="tech-stack">Java • Ruby • Python • Solr • Kafka • Redis • AWS</div>
+        <div class="url">vaishnav97.github.io/Portfolio</div>
+    </div>
+</body>
+</html> 
